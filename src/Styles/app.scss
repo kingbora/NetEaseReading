@@ -1,0 +1,49 @@
+$border-color: #ededed;
+[data-role="border-top"]:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    top: 0;
+    background: $border-color;
+    transform: scale(0.5);
+}
+[data-role="border-bottom"]:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -50%;
+    width: 200%;
+    height: 1px;
+    bottom: 0;
+    background: $border-color;
+    transform: scale(0.5);
+}
+[data-role="border-left"]:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50%;
+    width: 1px;
+    height: 200%;
+    left: 0;
+    background: $border-color;
+    transform: scale(0.5);
+}
+[data-role="border-right"]:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -50%;
+    width: 1px;
+    height: 200%;
+    right: 0;
+    background: $border-color;
+    transform: scale(0.5);
+}
+/*全局化*/
+:global(#app) {
+    height: 100%;
+}
