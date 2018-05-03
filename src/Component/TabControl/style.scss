@@ -2,11 +2,13 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 2000;
 }
 .tab_top_fixed {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2000;
 }
 
 .tab {
@@ -21,6 +23,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  background: #fff;
 }
 .tab_title {
   display: flex;

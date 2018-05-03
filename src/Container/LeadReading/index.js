@@ -8,23 +8,35 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {fetchCardList} from "./actions";
 import PureRenderMixin from "react-addons-pure-render-mixin";
+import DetailPage from "./DetailPage";
 
 class LeadReading extends Component {
     constructor(props) {
         super(props);
         //shouldComponentUpdate会频繁调用，所以将繁琐的深比较改为浅比较
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+
+        this.toListDetail = this.toListDetail.bind(this);
     }
 
     componentDidMount() {
         this.props.getCardList();
     }
 
+    toListDetail() {
+        window.globalNavigator.pushPage({
+            title: 'DetailPage',
+            key: 'Navigation/DetailPage',
+            component: DetailPage,
+            duration: 0.4
+        });
+    }
+
     render() {
         const { data } = this.props;
         console.log(data);
         let articleContent = data.map((item, index, arr)=>{
-            return (<ListCard key={"card-list-"+index} data={item} index={index} />);
+            return (<ListCard key={"card-list-"+index} data={item} index={index} toListDetail={this.toListDetail} />);
         });
         return (
             <Page>

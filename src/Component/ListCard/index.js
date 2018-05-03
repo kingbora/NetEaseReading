@@ -13,7 +13,7 @@ export default class ListCard extends Component {
     render() {
         const { data, index } = this.props;
         return (
-            <div className={styles.list__card}>
+            <div className={styles.list__card} onClick={()=>{this.props.toListDetail()}}>
                 <div className={styles.card__header}>
                     <a href="javascript:;">
                         <img src={data.avatar} />

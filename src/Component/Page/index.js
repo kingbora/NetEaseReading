@@ -11,14 +11,10 @@ export default class Page extends Component {
         super(props);
     }
 
-    back() {
-
-    }
-
     render() {
         let toolbar__content = [
             (<div key={1} className={styles.toolbar__left}>
-                <span className={styles.toolbar__backButton}>
+                <span className={styles.toolbar__backButton} onClick={()=> window.globalNavigator.popPage()}>
                     <img className={styles.toolbar__back_icon} src={back} />
                 </span>
             </div>),
@@ -26,11 +22,21 @@ export default class Page extends Component {
             (<div key={3} className={styles.toolbar__right}> </div>)
         ];
         let page__content = [];
-        let children = this.props.children;
+        let children = [];
+        if (Array.isArray(this.props.children)) {
+            children = this.props.children;
+        } else {
+            children.push(this.props.children);
+        }
 
         children.map((el, index) => {
             if (el.type === "header") {
-                let arr = el.props.children;
+                let arr = [];
+                if (Array.isArray(el.props.children)) {
+                    arr = el.props.children;
+                } else {
+                    arr.push(el.props.children);
+                }
                 arr.map((elm, indx) => {
                     switch (elm.props['data-role']) {
                         case "left":
