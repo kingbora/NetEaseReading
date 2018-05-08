@@ -3,6 +3,7 @@
  */
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -82,6 +83,14 @@ app.use('/getHomeList', function(req, res, next) {
             star: 157
         }
     ];
+
+    res.json(data);
+});
+
+app.use("/getArticle", function(req, res, next) {
+    const id = req.query.id;
+
+    let data = fs.readFileSync("./database/article" + id + ".md", "utf-8");
 
     res.json(data);
 });

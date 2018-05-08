@@ -1,4 +1,4 @@
-$border-color: #ededed;
+@import "./variable";
 [data-role="border-top"]:after {
     content: "";
     display: block;
@@ -43,7 +43,49 @@ $border-color: #ededed;
     background: $border-color;
     transform: scale(0.5);
 }
-/*全局化*/
-:global(#app) {
-    height: 100%;
+/*全局化，即不会被模块化*/
+:global {
+    .page__content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #app {
+        height: 100%;
+        //主页tab样式
+        .tabbar {
+            background-color: #fff;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -50%;
+                width: 200%;
+                height: 1px;
+                top: 0;
+                background: $border-color;
+                transform: scale(0.5);
+            }
+        }
+        //所有toolbar样式
+        .toolbar {
+            background: #fff;
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -50%;
+                width: 200%;
+                height: 1px;
+                bottom: 0;
+                background: $border-color;
+                transform: scale(0.5);
+            }
+        }
+        .page__background {
+          background-color: #fff;
+        }
+        .back-button__icon {
+            fill: #b3b3b3;
+        }
+    }
 }

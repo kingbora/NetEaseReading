@@ -1,0 +1,14 @@
+#customPage {
+  padding: 0 20px;
+  &:after {
+    content: none !important;
+  }
+  :global {
+    .page__content {
+      padding: 0;
+    }
+  }
+}
+.personalHeader {
+  border-bottom: 8px solid #f6f6f6;
+}

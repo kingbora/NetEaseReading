@@ -1,0 +1,85 @@
+#customPage {
+  padding: 0 20px;
+  &:after {
+    content: none !important;
+  }
+  :global {
+    .toolbar__left {
+      width: 0;
+    }
+    .toolbar__center {
+      width: 87%;
+      ons-search-input {
+        width: 100%;
+        .search-input {
+          vertical-align: middle;
+        }
+      }
+    }
+    .toolbar__right {
+      width: 13%;
+      .ons-icon {
+        font-size: 25px;
+        color: #979797;
+      }
+    }
+    h1 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 8px;
+    }
+    h4 {
+      font-size: 11px;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+  }
+}
+.divided {
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
+  position: relative;
+  > span {
+    padding: 0 10px;
+    color: #b3b3b3;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+  }
+  &:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #f2f2f2;
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5px;
+  }
+}
+.lineCard {
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  background: #b3b3b3;
+}
+.cubeList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cubeCard {
+  background: #b3b3b3;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.rankTop {
+  text-align: center;
+  margin-top: 15px;
+}

@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import styles from './style.scss';
-import Icon from "../Icon";
+import * as Ons from 'react-onsenui';
 
 export default class ListCard extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ export default class ListCard extends Component {
     render() {
         const { data, index } = this.props;
         return (
-            <div className={styles.list__card} onClick={()=>{this.props.toListDetail()}}>
+            <div className={styles.list__card} onClick={()=>{this.props.toListDetail(index)}}>
                 <div className={styles.card__header}>
                     <a href="javascript:;">
                         <img src={data.avatar} />
@@ -36,7 +36,7 @@ export default class ListCard extends Component {
                     </div>
                     <div className={styles.card_bottom_right}>
                         {data.star}
-                        <Icon type="support" />
+                        <Ons.Icon icon="md-thumb-up" />
                     </div>
                 </div>
             </div>
