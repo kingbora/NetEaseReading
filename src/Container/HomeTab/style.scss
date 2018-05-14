@@ -1,0 +1,7 @@
+#homeTab {
+  :global {
+    :checked + .tabbar__button {
+      color: #434343;
+    }
+  }
+}

@@ -1,7 +1,8 @@
+@import "../../Styles/variable";
 .list__card {
   background: #fff;
   border-bottom: 5px solid #f6f6f6;
-  padding: 15px 15px 10px;
+  padding: $edge_width $edge_width 10px;
 }
 .card__header {
   $card_header_height: 36px;

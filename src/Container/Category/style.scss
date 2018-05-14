@@ -1,9 +1,12 @@
+@import '../../Styles/variable';
 #customPage {
-  padding: 0 20px;
-  &:after {
-    content: none !important;
-  }
   :global {
+    .toolbar {
+      padding: 0 $edge_width;
+      &:after {
+        content: none !important;
+      }
+    }
     .toolbar__left {
       width: 0;
     }

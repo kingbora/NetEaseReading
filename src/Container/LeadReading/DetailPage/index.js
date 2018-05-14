@@ -13,6 +13,7 @@ class DetailPage extends Component {
     constructor(props) {
         super(props);
         this.renderToolbar = this.renderToolbar.bind(this);
+        this.renderBottomToolbar = this.renderBottomToolbar.bind(this);
     }
 
     componentDidMount() {
@@ -31,10 +32,26 @@ class DetailPage extends Component {
         )
     }
 
-    render() {
-        const {data, isLoading} = this.props;
+    renderBottomToolbar() {
         return (
-            <Ons.Page renderToolbar={this.renderToolbar}>
+            <Ons.BottomToolbar className={styles.bottomToolbar}>
+                <Ons.Icon icon="ion-ios-undo-outline" />
+                <Ons.Icon icon="ion-ios-heart-outline" />
+                <Ons.Icon icon="ion-ios-chatbubble-outline" />
+            </Ons.BottomToolbar>
+        )
+    }
+
+    render() {
+        const {data, isLoading, route} = this.props;
+        const {title, avatar, username} = route.data;
+        return (
+            <Ons.Page id={styles.detailPage} renderToolbar={this.renderToolbar} renderBottomToolbar={this.renderBottomToolbar}>
+                <h2>{title}</h2>
+                <a className={styles.userStyle} href="javascript:;">
+                    <img src={avatar} />
+                    <span>{username}</span>
+                </a>
                 {
                     !isLoading &&
                     <ReactMarkdown className={styles.detail_content} source={data} />

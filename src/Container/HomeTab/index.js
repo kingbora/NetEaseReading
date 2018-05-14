@@ -7,6 +7,7 @@ import LeadReading from "../LeadReading";
 import Category from "../Category";
 import MinePanel from "../MinePanel";
 import ReadingDesk from "../ReadingDesk";
+import styles from './style.scss';
 
 export default class HomeTab extends Component {
     constructor(props) {
@@ -50,6 +51,7 @@ export default class HomeTab extends Component {
                     index={this.state.index}
                     animation="none"
                     tabBorder={false}
+                    id={styles.homeTab}
                     onPreChange={(event) => {
                         if (event.index !== this.state.index) {
                             this.setState({

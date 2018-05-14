@@ -1,14 +1,109 @@
+@import '../../Styles/variable';
 #customPage {
-  padding: 0 20px;
-  &:after {
-    content: none !important;
-  }
   :global {
+    .toolbar {
+      padding: 0 $edge_width;
+      .toolbar__right {
+        color: #818181;
+      }
+      &:after {
+        content: none !important;
+      }
+    }
     .page__content {
       padding: 0;
+    }
+    .list {
+      margin-bottom: 15px;
+      .list-item__center {
+        color: #525252;
+        font-size: 15px;
+      }
+      .list-item__left {
+        color: #d6d6d6;
+        font-size: 22px;
+      }
+      .list-item__right {
+        color: #b4b4b4;
+        font-size: 13px;
+      }
     }
   }
 }
 .personalHeader {
   border-bottom: 8px solid #f6f6f6;
+  text-align: center;
+}
+.defaultPortrait {
+  position: relative;
+  margin: 15px 0;
+  display: inline-block;
+  img {
+    display: inline-block;
+    width: 75px;
+  }
+  sup {
+    position: absolute;
+    bottom: 0;
+    right: 14%;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    background: #DE667B;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 11px;
+  }
+}
+.lineStyle {
+  background: #ececec;
+  height: 20px;
+  transform: translate3d(0,50%,0);
+}
+.userName {
+  color: #444;
+  font-size: 16px;
+}
+.userCountMsg {
+  margin: 10px 0;
+}
+.contentStyle {
+  color: #474747;
+  font-size: 14px;
+  justify-content: center;
+}
+.descriptionStyle {
+  color: #ececec;
+  font-size: 13px;
+  justify-content: center;
+}
+.female {
+  background: #DE667B;
+}
+.male {
+  background: #33b0fc;
+}
+.reverseBuy {
+  background: #fff;
+  color: #555;
+  font-size: 13px;
+  border: 1px solid #b4b4b4;
+  padding: 1px 12px;
+  line-height: 26px;
+  height: 28px;
+  border-radius: 15px;
+}
+.messageCount {
+  background: #C0605D;
+  color: #fff;
+  height: 20px;
+  border-radius: 10px;
+  min-width: 20px;
+  border: 1px solid transparent;
+  line-height: 18px;
+  text-align: center;
+  padding: 0 6px;
+  font-size: 12px;
+  white-space: nowrap;
 }

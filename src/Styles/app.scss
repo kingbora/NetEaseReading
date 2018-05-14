@@ -46,8 +46,7 @@
 /*全局化，即不会被模块化*/
 :global {
     .page__content {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0 $edge_width;
     }
     #app {
         height: 100%;

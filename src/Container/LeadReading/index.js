@@ -23,6 +23,7 @@ class LeadReading extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleLoad = this.handleLoad.bind(this);
         this.getContent = this.getContent.bind(this);
+        this.loadNext = this.loadNext.bind(this);
     }
 
     componentDidMount() {
@@ -30,10 +31,16 @@ class LeadReading extends Component {
     }
 
     toListDetail(index) {
+        const item = this.props.data[index];
         window.globalNavigator.pushPage({
             key: 'Navigation/DetailPage',
             component: DetailPage,
-            hasBackButton: true
+            hasBackButton: true,
+            data: {
+                title: item.title,
+                avatar: item.avatar,
+                username: item.username
+            }
         });
     }
 
@@ -52,6 +59,7 @@ class LeadReading extends Component {
         });
     }
 
+    //下拉刷新
     handleLoad(done) {
         setTimeout(() => {
             console.log(123);
@@ -70,13 +78,18 @@ class LeadReading extends Component {
         }
     }
 
+    //上拉加载更多
+    loadNext() {
+        console.log(123);
+    }
+
     render() {
         const { data } = this.props;
         let articleContent = data.map((item, index, arr)=>{
-            return (<ListCard key={"card-list-"+index} data={item} index={index} toListDetail={this.toListDetail} />);
+            return (<ListCard key={"card-list-"+index} data={item} index={index} toListDetail={this.toListDetail} openPopover={this.show} />);
         });
         return (
-            <Ons.Page renderToolbar={this.renderToolbar}>
+            <Ons.Page id={styles.leadReading} renderToolbar={this.renderToolbar} onInfiniteScroll={this.loadNext}>
                 <Ons.PullHook
                     onChange={this.handleChange}
                     onLoad={this.handleLoad}

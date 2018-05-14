@@ -1,0 +1,11 @@
+@import '../../Styles/variable';
+#leadReading {
+  :global {
+    .toolbar {
+      padding: 0 $edge_width;
+    }
+    .page__content {
+      padding: 0;
+    }
+  }
+}

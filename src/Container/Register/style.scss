@@ -1,0 +1,73 @@
+@import "../../Styles/variable";
+#register {
+  :global {
+    .toolbar {
+      padding: 0 $edge_width;
+    }
+    .page__background {
+      background-color: #fefefe;
+    }
+    .page__content {
+      padding: 0 13%;
+    }
+    .toolbar {
+      &:after {
+        content: none !important;
+      }
+    }
+  }
+  .loginButton {
+    background: #BF5F5C;
+    color: #fff;
+    border-radius: 45px;
+    width: 100%;
+    text-align: center;
+    line-height: 45px;
+    padding: 0;
+    margin: 25px 0 40px;
+  }
+  .shareTool {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    > span {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 1px solid #f6f6f6;
+      line-height: 45px;
+      text-align: center;
+      > img {
+        width: 25px;
+      }
+    }
+  }
+}
+.page__inner {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  .loginWrap {
+    flex: 1;
+    text-align: center;
+    > p {
+      color: #878787;
+    }
+    > h3 {
+      color: #545454;
+    }
+  }
+  .canvasStyles {
+    margin: 30px auto 0;
+  }
+  .bottomProtocol {
+    text-align: center;
+    color: #b8b8b8;
+    padding: 10px 0;
+    a {
+      color: #4E8D8C;
+      text-decoration: none;
+    }
+  }
+}

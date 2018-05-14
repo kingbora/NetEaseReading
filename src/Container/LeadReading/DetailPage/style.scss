@@ -1,6 +1,36 @@
 .detail_content {
   color: #454545;
+  font-size: 15px;
   img {
     width: 100%;
+    margin: 15px 0;
+  }
+  p {
+    margin: 25px 0;
+  }
+}
+.userStyle {
+  line-height: 36px;
+  img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    float: left;
+    margin: 0;
+  }
+  span {
+    padding-left: 10px;
+  }
+}
+#detailPage {
+  .bottomToolbar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    ons-icon {
+      font-size: 25px;
+    }
   }
 }
