@@ -14,6 +14,10 @@ export default class App extends Component {
         );
     }
 
+    componentDidMount() {
+        navigator.splashscreen.hide();
+    }
+
     render() {
         return (
             <Ons.Navigator initialRoute={{
